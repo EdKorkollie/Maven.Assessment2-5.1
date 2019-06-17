@@ -51,7 +51,7 @@ public class StringUtils {
 //            }
 //        }
         //string.matches("[a-zA-Z] +");
-        boolean allLetters = string.chars().allMatch(Character::isLetter);
+       boolean allLetters = string.chars().allMatch(Character::isLetter);
 
         return allLetters;
     }
@@ -72,6 +72,10 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        String splchar = "-\\[/@#$%^&_!+=()";
+        if(string.matches("[" + splchar + "]+")) {
+            return true;
+        }
+        return false;
     }
 }
